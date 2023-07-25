@@ -25,6 +25,8 @@ abstract class CommandWithUpgrade extends \WP_CLI_Command {
 	// Invalid version message.
 	const INVALID_VERSION_MESSAGE = 'version higher than expected';
 
+	const INVALID_LOCAL_PLUGIN_VERSION = 'local plugin version invalid or empty';
+
 	public function __construct() {
 
 		// Do not automatically check translations updates after updating plugins/themes.
