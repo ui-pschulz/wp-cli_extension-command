@@ -729,6 +729,8 @@ class Plugin_Command extends \WP_CLI\CommandWithUpgrade {
 
 				if (!is_string($details['Version'])) {
 					$items[ $file ]['update'] = static::INVALID_LOCAL_PLUGIN_VERSION;
+				} else if (!is_string($plugin_update_info->new_version)) {
+					$items[ $file ]['update'] = static::INVALID_REMOTE_PLUGIN_VERSION;
 				} else
 				// Compare version and update information in plugin list.
 				if ( null !== $plugin_update_info && version_compare( $details['Version'], $plugin_update_info->new_version, '>' ) ) {
