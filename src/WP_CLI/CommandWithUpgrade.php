@@ -26,6 +26,7 @@ abstract class CommandWithUpgrade extends \WP_CLI_Command {
 	const INVALID_VERSION_MESSAGE = 'version higher than expected';
 
 	const INVALID_LOCAL_PLUGIN_VERSION = 'local plugin version invalid or empty';
+	const INVALID_REMOTE_PLUGIN_VERSION = 'remote plugin version invalid, no update info available';
 
 	public function __construct() {
 
