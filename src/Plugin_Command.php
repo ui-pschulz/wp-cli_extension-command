@@ -727,7 +727,7 @@ class Plugin_Command extends \WP_CLI\CommandWithUpgrade {
 				// Get info for all plugins that don't have an update.
 				$plugin_update_info = isset( $all_update_info->no_update[ $file ] ) ? $all_update_info->no_update[ $file ] : null;
 
-				if ('' === trim($details['Version'])) {
+				if (!is_string($details['Version'])) {
 					$items[ $file ]['update'] = static::INVALID_LOCAL_PLUGIN_VERSION;
 				} else
 				// Compare version and update information in plugin list.
